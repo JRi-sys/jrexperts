@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Atelier des Gourmandises — Cercié</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#7B2D3B;--dark:#3D1520;--accent:#D4A0AC;--cream:#FDF5F7;--text:#3D1520;--text-light:#3D152099}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:42px}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(30,20,15,0.92);backdrop-filter:blur(12px);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:70px}
+nav .logo{font-family:'Playfair Display',serif;color:var(--accent);font-size:1.3rem;letter-spacing:0.02em}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav ul a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.85rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s}
+nav ul a:hover{color:var(--accent)}
+nav .cta-nav{background:var(--primary);color:#fff;padding:0.6rem 1.4rem;border-radius:4px;text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:background 0.3s}
+.hero{height:100vh;background:url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80") center/cover no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.45) 0%,rgba(0,0,0,0.6) 100%)}
+.hero-content{position:relative;z-index:1;padding:0 2rem}
+.hero-badge{display:inline-block;border:1px solid rgba(255,255,255,0.5);color:rgba(255,255,255,0.9);padding:0.4rem 1.2rem;border-radius:30px;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2rem;backdrop-filter:blur(4px);background:rgba(255,255,255,0.08)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5rem);color:#fff;font-weight:700;line-height:1.1;margin-bottom:0.3rem;text-shadow:0 2px 20px rgba(0,0,0,0.3)}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:400}
+.hero .subtitle{font-family:'Playfair Display',serif;color:rgba(255,255,255,0.85);font-size:1.15rem;font-style:italic;margin-bottom:2.5rem;font-weight:400}
+.hero .cta-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--primary);color:#fff;padding:1rem 2.2rem;border:none;border-radius:4px;font-size:0.85rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all 0.3s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.btn-outline{background:rgba(255,255,255,0.1);color:#fff;padding:1rem 2.2rem;border:1px solid rgba(255,255,255,0.4);border-radius:4px;font-size:0.85rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all 0.3s;backdrop-filter:blur(4px)}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.2)}
+.scroll-hint{position:absolute;bottom:2rem;color:rgba(255,255,255,0.5);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+section{padding:6rem 2rem}.container{max-width:1100px;margin:0 auto}
+.section-label{color:var(--primary);font-size:0.7rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.8rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--dark);margin-bottom:1.5rem;line-height:1.2}
+.section-text{color:var(--text-light);font-size:1.05rem;max-width:600px;line-height:1.8}
+.about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-image{width:100%;aspect-ratio:4/5;border-radius:8px;overflow:hidden;position:relative}
+.about-image img{width:100%;height:100%;object-fit:cover;display:block}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
+.stat{padding:1.2rem;border-left:2px solid var(--accent)}
+.stat-number{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--dark);font-weight:700}
+.stat-label{font-size:0.8rem;color:var(--text-light);margin-top:0.2rem}
+.menu{background:var(--cream)}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.menu-card{background:#fff;border-radius:8px;overflow:hidden;transition:all 0.3s;border:1px solid rgba(0,0,0,0.05)}
+.menu-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.08)}
+.menu-card-img{height:180px;background-size:cover;background-position:center;position:relative}
+.menu-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,0.15) 100%)}
+.menu-card-body{padding:1.8rem 1.5rem;text-align:center}
+.menu-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--dark);margin-bottom:0.6rem}
+.menu-card p{color:var(--text-light);font-size:0.9rem;line-height:1.7}
+.hours{background:#fff}
+.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.hours-table{width:100%;margin-top:1.5rem}
+.hours-row{display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid rgba(0,0,0,0.06)}
+.hours-day{font-weight:500}.hours-time{color:var(--text-light)}.hours-closed{color:var(--primary);font-style:italic}
+.location-card{background:var(--cream);border-radius:8px;padding:2.5rem;margin-top:1.5rem}
+.location-card h3{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1.2rem;color:var(--dark)}
+.location-line{display:flex;align-items:flex-start;gap:0.8rem;margin-bottom:1rem;color:var(--text-light);font-size:0.95rem}
+.cta-section{background:linear-gradient(135deg,var(--primary),var(--dark));text-align:center;padding:5rem 2rem}
+.cta-section .section-title{color:#fff;margin-bottom:1rem}.cta-section p{color:rgba(255,255,255,0.8);font-size:1.05rem;margin-bottom:2rem}
+.btn-white{background:#fff;color:var(--primary);padding:1rem 2.5rem;border:none;border-radius:4px;font-size:0.85rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all 0.3s}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:3rem 2rem;text-align:center;font-size:0.85rem}
+footer .footer-logo{font-family:'Playfair Display',serif;color:var(--accent);font-size:1.4rem;margin-bottom:0.5rem}
+footer a{color:var(--accent);text-decoration:none}
+.watermark{position:fixed;bottom:1rem;right:1rem;background:rgba(0,0,0,0.85);color:rgba(255,255,255,0.7);padding:0.6rem 1.2rem;border-radius:6px;font-size:0.7rem;letter-spacing:0.05em;z-index:200;backdrop-filter:blur(10px)}
+.watermark strong{color:var(--accent)}
+.mockup-banner{position:fixed;top:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,#1E293B 0%,#334155 100%);padding:0.7rem 1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.15);font-family:"Inter",sans-serif}
+.mockup-banner-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1rem;font-size:0.82rem;color:rgba(255,255,255,0.85);line-height:1.5}
+.mockup-banner-inner strong{color:#F59E0B}
+.mockup-badge{background:#F59E0B;color:#1E293B;padding:0.25rem 0.7rem;border-radius:3px;font-size:0.65rem;font-weight:800;letter-spacing:0.12em;flex-shrink:0}
+@media(max-width:768px){nav ul{display:none}.about-grid,.hours-grid{grid-template-columns:1fr;gap:2rem}.menu-grid{grid-template-columns:1fr}section{padding:4rem 1.5rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">L'Atelier des Gourmandises</div>
+  <ul><li><a href="#about">À propos</a></li><li><a href="#menu">La carte</a></li><li><a href="#hours">Infos pratiques</a></li></ul>
+  <a href="#hours" class="cta-nav">Nous contacter</a>
+</nav>
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Restaurant gastronomique</div>
+    <h1>L'Atelier des<br><em>Gourmandises</em></h1>
+    <p class="subtitle">Restaurant au cœur du Beaujolais, à Cercié</p>
+    <div class="cta-group">
+      <a href="#menu" class="btn-primary">La carte</a>
+      <a href="#hours" class="btn-outline">Nous contacter</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Défiler ↓</div>
+</section>
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image"><img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=800&q=80" alt="L'Atelier des Gourmandises" loading="lazy"></div>
+      <div>
+        <div class="section-label">À propos</div>
+        <h2 class="section-title">Bienvenue chez L'Atelier des Gourmandises</h2>
+        <p class="section-text">L'Atelier des Gourmandises vous accueille dans le cadre enchanteur du Beaujolais. Une cuisine raffinée et inventive, des produits locaux de saison, et une carte des vins du terroir beaujolais.</p>
+        <div class="about-stats"><div class="stat"><div class="stat-number">Beaujolais</div><div class="stat-label">Au cœur du vignoble</div></div><div class="stat"><div class="stat-number">Saison</div><div class="stat-label">Produits frais du marché</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="menu" id="menu">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:1rem">
+      <div class="section-label">La carte</div>
+      <h2 class="section-title">La carte</h2>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card"><div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80')"></div><div class="menu-card-body"><h3>Entrées raffinées</h3><p>Foie gras maison, tartare de bœuf charolais, velouté de saison aux épices</p></div></div>
+      <div class="menu-card"><div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80')"></div><div class="menu-card-body"><h3>Plats signature</h3><p>Magret de canard aux cerises, filet de sandre au beurre blanc, risotto crémeux</p></div></div>
+      <div class="menu-card"><div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&q=80')"></div><div class="menu-card-body"><h3>Desserts gourmands</h3><p>Fondant au chocolat noir, panna cotta fruits rouges, assiette de fromages affinés</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="hours" id="hours">
+  <div class="container">
+    <div class="hours-grid">
+      <div>
+        <div class="section-label">Horaires</div>
+        <h2 class="section-title">Horaires d'ouverture</h2>
+        <div class="hours-table"><div class="hours-row"><span class="hours-day">Mercredi – Dimanche</span><span class="hours-time">12h – 14h / 19h30 – 21h30</span></div><div class="hours-row"><span class="hours-day">Lundi – Mardi</span><span class="hours-closed">Fermé</span></div></div>
+      </div>
+      <div>
+        <div class="section-label">Nous trouver</div>
+        <h2 class="section-title">Accès &amp; Contact</h2>
+        <div class="location-card">
+          <h3>📍 L'Atelier des Gourmandises</h3>
+          <div class="location-line"><span>🏠</span><span>Cercié, 69220</span></div>
+          <div class="location-line"><span>✉️</span><span><a href="mailto:emmanuel.travet@hotmail.fr" style="color:var(--primary);text-decoration:none">emmanuel.travet@hotmail.fr</a></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="container">
+    <h2 class="section-title">Réservez votre table</h2>
+    <p>Contactez L'Atelier des Gourmandises pour une expérience culinaire au cœur du Beaujolais.</p>
+    <a href="#hours" class="btn-white">Nous contacter</a>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">L'Atelier des Gourmandises</div>
+  <p>Cercié, 69220</p>
+  <p style="margin-top:0.8rem">© 2026 L'Atelier des Gourmandises</p>
+</footer>
+<div class="mockup-banner">
+  <div class="mockup-banner-inner">
+    <span class="mockup-badge">MAQUETTE</span>
+    <span>Cette maquette est une <strong>proposition visuelle</strong> — elle peut bien sûr être <strong>complétée, modifiée et personnalisée</strong> selon vos envies.</span>
+  </div>
+</div>
+<div class="watermark">Maquette par <strong>Web Redesign</strong></div>
+<script data-goatcounter="https://jrexperts.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
