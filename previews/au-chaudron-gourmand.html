@@ -74,13 +74,14 @@ nav .cta-nav:hover { background: var(--deep-red); }
 /* HERO */
 .hero {
   height: 100vh;
-  background: linear-gradient(160deg, var(--volcanic) 0%, #3E2F2B 40%, var(--warm-red) 100%);
+  background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80') center/cover no-repeat;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
+.hero::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.55); z-index:0; }
 .hero::before {
   content: '';
   position: absolute; inset: 0;
