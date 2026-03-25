@@ -16,7 +16,8 @@ nav ul{list-style:none;display:flex;gap:2rem}
 nav ul a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.85rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s}
 nav ul a:hover{color:var(--accent)}
 nav .cta-nav{background:var(--primary);color:#fff;padding:0.6rem 1.4rem;border-radius:30px;text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase}
-.hero{height:100vh;background:linear-gradient(160deg,var(--dark) 0%,var(--primary) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative}
+.hero{height:100vh;background:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80') center/cover no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:0}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,5.5rem);color:#fff;font-weight:700;line-height:1.05;margin-bottom:0.5rem}
 .hero h1 em{font-style:italic;color:var(--accent);font-weight:400}
 .hero .subtitle{color:rgba(255,255,255,0.6);font-size:1.1rem;margin-bottom:2.5rem;font-weight:300;letter-spacing:0.05em}
