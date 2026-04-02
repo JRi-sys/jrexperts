@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Jean-Marc Benoit Parquet — Parqueteur à Marseille</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--serif:'Cormorant Garamond';--primary:#4A6A8A;--primary-light:#5E84A8;--dark:#1E2E3E;--accent:#E8A84C;--cream:#F5F5F2;--white:#FFFFFF;--text:#2A3542;--text-light:rgba(42,53,66,0.6);--radius:12px;--shadow:0 4px 30px rgba(0,0,0,0.08)}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-top:42px}
+nav{position:fixed;top:42px;width:100%;z-index:100;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:72px;background:rgba(30,46,62,0.95);backdrop-filter:blur(12px)}
+.nav-logo{font-family:var(--serif),serif;color:#fff;font-size:1.4rem;font-weight:600;letter-spacing:0.03em}.nav-logo span{color:var(--accent);font-style:italic;font-weight:400}
+nav ul{list-style:none;display:flex;gap:2rem}nav ul a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.82rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s}
+nav ul a:hover{color:#fff}
+.nav-cta{background:var(--accent);color:var(--dark);padding:0.6rem 1.5rem;border-radius:6px;text-decoration:none;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.3s}
+.hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1920&q=80') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.35) 50%,rgba(0,0,0,0.75) 100%)}
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 2rem;max-width:900px}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.9);padding:0.5rem 1.4rem;border-radius:30px;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2rem;backdrop-filter:blur(4px);background:rgba(255,255,255,0.06)}
+.hero h1{font-family:var(--serif),serif;font-size:clamp(3rem,7vw,5.5rem);color:#fff;font-weight:700;line-height:1.05;margin-bottom:0.5rem}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:400}
+.hero-sub{font-family:var(--serif),serif;color:rgba(255,255,255,0.7);font-size:1.2rem;font-style:italic;margin-bottom:2.5rem}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:var(--dark);padding:1rem 2.5rem;border:none;border-radius:6px;font-size:0.82rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all 0.3s}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(0,0,0,0.2)}
+.btn-ghost{background:rgba(255,255,255,0.08);backdrop-filter:blur(4px);color:#fff;padding:1rem 2.5rem;border:1px solid rgba(255,255,255,0.2);border-radius:6px;font-size:0.82rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all 0.3s}
+.scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.4);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase}
+section{padding:7rem 2rem}.container{max-width:1100px;margin:0 auto}
+.reveal{opacity:1;transform:translateY(0)}
+.section-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;color:var(--primary);font-size:0.7rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1rem}.section-eyebrow::before{content:'';width:24px;height:1.5px;background:var(--accent)}
+.section-title{font-family:var(--serif),serif;font-size:clamp(2rem,4vw,3rem);color:var(--dark);margin-bottom:1.5rem;line-height:1.15}
+.section-text{color:var(--text-light);font-size:1rem;max-width:620px;line-height:1.85}
+.about{background:var(--white)}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-visual{position:relative}.about-img-main{width:100%;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}.about-img-main img{width:100%;height:100%;object-fit:cover}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}.stat{padding:1.2rem 0;border-left:2px solid var(--accent);padding-left:1.2rem}.stat-number{font-family:var(--serif),serif;font-size:2rem;color:var(--dark);font-weight:700}.stat-label{font-size:0.8rem;color:var(--text-light);margin-top:0.15rem}
+.content-section{background:var(--cream)}.content-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem}
+.content-card{background:var(--white);border-radius:var(--radius);padding:2.5rem 2rem;text-align:center;transition:all 0.4s;border:1px solid rgba(0,0,0,0.04);position:relative;overflow:hidden}
+.content-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.1)}
+.content-icon{font-size:2.8rem;margin-bottom:1.2rem;display:block}.content-card h3{font-family:var(--serif),serif;font-size:1.4rem;color:var(--dark);margin-bottom:0.8rem;font-weight:600}
+.content-card p{color:var(--text-light);font-size:0.9rem;line-height:1.7}.content-price{display:inline-block;margin-top:1.2rem;color:var(--primary);font-weight:600;font-size:1.1rem;background:rgba(0,0,0,0.04);padding:0.3rem 1rem;border-radius:20px}
+.info-section{background:var(--cream)}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.location-card{background:var(--white);border-radius:var(--radius);padding:2.5rem;margin-top:2rem;box-shadow:var(--shadow)}.location-card h3{font-family:var(--serif),serif;font-size:1.3rem;margin-bottom:1.2rem;color:var(--dark)}
+.location-line{display:flex;align-items:center;gap:0.8rem;margin-bottom:0.8rem;color:var(--text-light);font-size:0.92rem}
+.cta-section{position:relative;text-align:center;padding:7rem 2rem;overflow:hidden;background:linear-gradient(135deg,var(--primary),var(--dark))}.cta-section .section-title{color:#fff;margin-bottom:1rem;font-family:var(--serif),serif}.cta-section p{color:rgba(255,255,255,0.8);font-size:1.05rem;margin-bottom:2.5rem;max-width:500px;margin-left:auto;margin-right:auto}
+.btn-white{background:#fff;color:var(--primary);padding:1.1rem 2.8rem;border:none;border-radius:6px;font-size:0.82rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all 0.3s;display:inline-block}.btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(255,255,255,0.2)}
+footer{background:var(--dark);color:rgba(255,255,255,0.45);padding:3.5rem 2rem;text-align:center;font-size:0.85rem}.footer-logo{font-family:var(--serif),serif;color:var(--accent);font-size:1.5rem;margin-bottom:0.3rem;font-weight:600}
+.footer-tagline{color:rgba(255,255,255,0.3);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem}
+.mockup-banner{position:fixed;top:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,#0F172A,#1E293B);padding:0.65rem 1.5rem;box-shadow:0 2px 20px rgba(0,0,0,0.2);font-family:'Outfit',sans-serif;display:flex;align-items:center;justify-content:center;gap:1rem}
+.mockup-badge{background:var(--accent);color:#0F172A;padding:0.25rem 0.75rem;border-radius:4px;font-size:0.65rem;font-weight:700;letter-spacing:0.12em}.mockup-text{color:rgba(255,255,255,0.85);font-size:0.78rem}.mockup-text strong{color:#fff;font-weight:600}
+.watermark{position:fixed;bottom:1.2rem;right:1.2rem;background:rgba(0,0,0,0.75);color:rgba(255,255,255,0.65);padding:0.6rem 1.2rem;border-radius:8px;font-size:0.7rem;letter-spacing:0.04em;z-index:200;backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08)}
+@media(max-width:768px){nav ul{display:none}.about-grid,.info-grid{grid-template-columns:1fr;gap:2.5rem}.content-grid{grid-template-columns:1fr}section{padding:4rem 1.5rem}}
+</style>
+<script data-goatcounter="https://jrexperts.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head><body>
+<div class="mockup-banner"><span class="mockup-badge">MAQUETTE</span><span class="mockup-text">Proposition de site pour <strong>Jean-Marc Benoit Parquet</strong></span></div>
+<nav><div class="nav-logo">Jean-Marc Benoit Parquet</div>
+<ul><li><a href="#about">L'entreprise</a></li><li><a href="#services">Prestations</a></li><li><a href="#contact">Contact</a></li></ul><a href="#contact" class="nav-cta">Demander un devis</a></nav>
+<section class="hero"><div class="hero-bg"></div><div class="hero-overlay"></div><div class="hero-content">
+<div class="hero-badge">✦ Parquet · Marseille</div><h1>Jean-Marc Benoit Parquet</h1>
+<p class="hero-sub">Parqueteur à Marseille</p><div class="hero-ctas"><a href="#services" class="btn-primary">Nos prestations</a><a href="#contact" class="btn-ghost">Demander un devis</a></div></div>
+<div class="scroll-indicator"><div class="scroll-line"></div>Découvrir</div></section>
+<section class="about" id="about"><div class="container"><div class="about-grid">
+<div class="about-visual reveal"><div class="about-img-main"><img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1920&q=80" alt="Jean-Marc Benoit Parquet" loading="lazy"></div></div>
+<div class="reveal"><div class="section-eyebrow">L'entreprise</div><h2 class="section-title">Parqueteur<br>à Marseille</h2>
+<p class="section-text">Jean-Marc Benoit, artisan parqueteur à Marseille. Pose, rénovation et ponçage de parquets — massif, contrecollé, stratifié. Un savoir-faire artisanal au service de vos sols.</p>
+<div class="about-stats"><div class="stat"><div class="stat-number">13</div><div class="stat-label">Marseille, 13000</div></div><div class="stat"><div class="stat-number">100%</div><div class="stat-label">Devis gratuit</div></div></div></div></div></div></section>
+<section class="content-section" id="services"><div class="container"><div class="reveal"><div class="section-eyebrow">Prestations</div><h2 class="section-title">Nos services</h2>
+<p class="section-text">Des prestations sur mesure pour chaque projet.</p></div><div class="content-grid">
+<div class="content-card reveal"><span class="content-icon">🪵</span><h3>Pose de parquet</h3><p>Parquet massif, contrecollé ou stratifié — pose collée, clouée ou flottante</p><div class="content-price">Sur devis</div></div>
+<div class="content-card reveal"><span class="content-icon">🔧</span><h3>Rénovation & ponçage</h3><p>Ponçage, vitrification et remise en état de parquets anciens</p><div class="content-price">Sur devis</div></div>
+<div class="content-card reveal"><span class="content-icon">🏠</span><h3>Conseil & devis</h3><p>Étude de votre projet, choix des essences et finitions adaptées</p><div class="content-price">Sur devis</div></div>
+
+</div></div></section>
+<section class="info-section" id="contact"><div class="container"><div class="info-grid">
+<div class="reveal"><div class="section-eyebrow">Contact</div><h2 class="section-title">Demander un devis</h2>
+<p class="section-text">Décrivez-nous votre projet et nous vous répondons sous 24h.</p>
+<div class="location-card"><h3>📍 Jean-Marc Benoit Parquet</h3><div class="location-line"><span>🏠</span><span>Marseille, 13000</span></div>
+
+<div class="location-line"><span>✉️</span><span><a href="mailto:benoit.j-marc@wanadoo.fr" style="color:var(--primary);text-decoration:none">benoit.j-marc@wanadoo.fr</a></span></div>
+</div></div>
+<div class="reveal"><div class="section-eyebrow">Zone d'intervention</div><h2 class="section-title">Nous intervenons</h2>
+<p class="section-text">Intervention dans votre secteur. Devis gratuit sur votre chantier.</p></div></div></div></section>
+<section class="cta-section"><div class="container">
+<h2 class="section-title">Un projet en tête ?</h2>
+<p>Contactez-nous pour un devis gratuit et sans engagement.</p><a href="mailto:benoit.j-marc@wanadoo.fr" class="btn-white">Demander un devis</a></div></section>
+<footer><div class="footer-logo">Jean-Marc Benoit Parquet</div><div class="footer-tagline">Parqueteur · Marseille</div>
+<div>© 2026 Jean-Marc Benoit Parquet — Tous droits réservés</div></footer>
+<div class="watermark">Maquette réalisée par JR Experts · jr@jrexperts.com</div>
+</body></html>
