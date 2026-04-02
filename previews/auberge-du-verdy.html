@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auberge du Verdy — Termes</title>
+<title>Auberge du Verdy — Termes (48)</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -17,8 +17,8 @@ nav ul{list-style:none;display:flex;gap:2rem}
 nav ul a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.85rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s}
 nav ul a:hover{color:var(--accent)}
 nav .cta-nav{background:var(--primary);color:#fff;padding:0.6rem 1.4rem;border-radius:4px;text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:background 0.3s}
-.hero{height:100vh;background:linear-gradient(160deg,var(--dark) 0%,#3E2218cc 40%,var(--primary) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")}
+.hero{height:100vh;background:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80') center/cover no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:0}
 .hero-content{position:relative;z-index:1;padding:0 2rem}
 .hero-badge{display:inline-block;border:1px solid var(--accent);color:var(--accent);padding:0.4rem 1.2rem;border-radius:30px;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2rem}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5rem);color:#fff;font-weight:700;line-height:1.1;margin-bottom:0.3rem}
@@ -37,8 +37,7 @@ section{padding:6rem 2rem}.container{max-width:1100px;margin:0 auto}
 .section-text{color:var(--text-light);font-size:1.05rem;max-width:600px;line-height:1.8}
 .about{background:#fff}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.about-image{width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,var(--dark),var(--primary));border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.about-image::after{content:'📷';font-size:3rem;opacity:0.3}
+.about-image{width:100%;aspect-ratio:4/5;background:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=1000&fit=crop') center/cover;border-radius:8px;position:relative;overflow:hidden}
 .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
 .stat{padding:1.2rem;border-left:2px solid var(--accent)}
 .stat-number{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--dark);font-weight:700}
@@ -89,12 +88,12 @@ body{padding-top:42px}
 </nav>
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-badge">Cuisine traditionnelle</div>
-    <h1>Auberge<br><em>du Verdy</em></h1>
+    <div class="hero-badge">Au cœur des Cévennes</div>
+    <h1>Auberge du Verdy<br><em>Restaurant</em></h1>
     <p class="subtitle">Termes (48)</p>
     <div class="cta-group">
-      <a href="#menu" class="btn-primary">Découvrir la carte</a>
-      <a href="#hours" class="btn-outline">Nous contacter</a>
+      <a href="tel:0466316097" class="btn-primary">Nous appeler</a>
+      <a href="#menu" class="btn-outline">Découvrir la carte</a>
     </div>
   </div>
   <div class="scroll-hint">Défiler ↓</div>
@@ -105,10 +104,12 @@ body{padding-top:42px}
       <div class="about-image"></div>
       <div>
         <div class="section-label">À propos</div>
-        <h2 class="section-title">Bienvenue chez Auberge du Verdy</h2>
-        <p class="section-text">Bienvenue à Auberge du Verdy, votre restaurant à Termes. Ici, la cuisine est faite maison avec des produits frais et locaux.</p>
+        <h2 class="section-title">Bienvenue à Auberge du Verdy</h2>
+        <p class="section-text">L'Auberge du Verdy vous accueille à Termes, en Lozère, au cœur des Cévennes. Cuisine traditionnelle avec les produits du terroir cévenol.</p>
         <div class="about-stats">
-          [('Fait maison', 'Des plats préparés avec soin'), ('Produits locaux', 'Des producteurs de la région')]
+          <div class="stat"><div class="stat-number">Lozère</div><div class="stat-label">Au cœur des Cévennes</div></div>
+<div class="stat"><div class="stat-number">Terroir</div><div class="stat-label">Produits locaux</div></div>
+
         </div>
       </div>
     </div>
@@ -121,24 +122,9 @@ body{padding-top:42px}
       <h2 class="section-title">Nos formules</h2>
     </div>
     <div class="menu-grid">
-      <div class="menu-card">
-        <div class="menu-icon">🍽️</div>
-        <h3>Menu du Midi</h3>
-        <p>Entrée + plat ou plat + dessert, produits frais et de saison</p>
-        <div class="menu-price">À partir de 15 €</div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-icon">🥘</div>
-        <h3>Menu du Soir</h3>
-        <p>Un menu complet avec entrée, plat et dessert maison</p>
-        <div class="menu-price">À partir de 25 €</div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-icon">🎉</div>
-        <h3>Groupes & Événements</h3>
-        <p>Repas de famille, anniversaires, séminaires — menus sur mesure</p>
-        <div class="menu-price">Sur devis</div>
-      </div>
+      <div class="menu-card"><div class="menu-icon">🍽️</div><h3>Menu du Midi</h3><p>Entrée + plat ou plat + dessert, produits frais et de saison</p><div class="menu-price">À partir de 15 €</div></div>
+      <div class="menu-card"><div class="menu-icon">🥘</div><h3>Menu Complet</h3><p>Un menu complet avec entrée, plat et dessert maison</p><div class="menu-price">À partir de 25 €</div></div>
+      <div class="menu-card"><div class="menu-icon">🎉</div><h3>Groupes & Événements</h3><p>Repas de famille, anniversaires — menus sur mesure</p><div class="menu-price">Sur devis</div></div>
     </div>
   </div>
 </section>
@@ -160,8 +146,8 @@ body{padding-top:42px}
         <div class="location-card">
           <h3>📍 Auberge du Verdy</h3>
           <div class="location-line"><span>🏠</span><span>Termes, 48310</span></div>
+          <div class='location-line'><span>📞</span><span><a href='tel:0466316097' style='color:var(--primary);text-decoration:none;font-weight:600'>04 66 31 60 97</a></span></div>
           <div class="location-line"><span>✉️</span><span><a href="mailto:aubergeduverdy@orange.fr" style="color:var(--primary);text-decoration:none">aubergeduverdy@orange.fr</a></span></div>
-
         </div>
       </div>
     </div>
@@ -169,8 +155,8 @@ body{padding-top:42px}
 </section>
 <section class="cta-section">
   <div class="container">
-    <h2 class="section-title">Réservez votre table à Auberge du Verdy</h2>
-    <p>Réservez dès maintenant chez Auberge du Verdy.</p>
+    <h2 class="section-title">Réservez votre table</h2>
+    <p>Contactez Auberge du Verdy pour réserver.</p>
     <a href="#hours" class="btn-white">Nous contacter</a>
   </div>
 </section>
